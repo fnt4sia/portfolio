@@ -18,7 +18,6 @@ h2{
     font-family: 'Shadows Into Light', cursive;
 }
 a{
-    color: white;
     text-decoration: none;
     cursor: pointer;
 }
@@ -44,12 +43,12 @@ header ul{
     gap: 5vw;
 }
 header ul li{
-    color: white;
+    color: rgb(150, 150, 150);
     text-align: center;
     font-size: 1.6em;
 }
 .active{
-    color: rgb(225, 30, 30);
+    color: white;
 }
 section{
     width: 100vw;
