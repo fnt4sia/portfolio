@@ -112,20 +112,20 @@ main p{
 }
 .name{
     position: absolute;
-    top: 35%;
-    left: 75%;
+    top: 35vh;
+    left: 75vw;
     transform: translate(-50%, -50%);
 }
 .college{
     position: absolute;
-    top: 50%;
-    left: 25%;
+    top: 50vh;
+    left: 25vw;
     transform: translate(-50%, -50%);
 }
 .softskill{
     position: absolute;
-    top: 80%;
-    left: 65%;
+    top: 80vh;
+    left: 65vw;
     transform: translate(-50%, -50%);
 }
 #about-me h1 {

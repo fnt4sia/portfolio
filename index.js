@@ -1,72 +1,62 @@
-let btn = document.querySelector(".left-button");
-let btn2 = document.querySelector(".up-button");
-let opened = false;
-let opened2 = false;
+let btn = document.querySelectorAll("#button");
 let link = document.querySelectorAll(".nav-link");
+let sect = document.querySelectorAll("section");
+let opened = false;
 
-btn.addEventListener("click", ()=>{
-
-    if(!opened){
-        let socmedIcon = document.querySelectorAll(".socmed-icon");
-
-        socmedIcon.forEach((i) => {
-            setTimeout(()=>{
-                i.style.display = "block";
-            }, 0)
-        });
-        btn.style.scale = -1;
-
-        opened = true
-    }
-    else{
-        let socmedIcon = document.querySelectorAll(".socmed-icon");
-
-        socmedIcon.forEach((i) => {
-            setTimeout(()=>{
-                i.style.display = "none";
-            }, 0)
-        });
-        btn.style.scale = 1;
-        opened = false;
-    }
-
+btn.forEach((i) => {
+    i.addEventListener("click", ()=>{
+        if(!opened){
+            let socmedIcon = document.querySelectorAll("#scmd");
+    
+            socmedIcon.forEach((i) => {
+                setTimeout(()=>{
+                    i.style.display = "block";
+                }, 0)
+            });
+            i.style.scale = -1;
+    
+            opened = true
+        }
+        else{
+            let socmedIcon = document.querySelectorAll("#scmd");
+    
+            socmedIcon.forEach((i) => {
+                setTimeout(()=>{
+                    i.style.display = "none";
+                }, 0)
+            });
+            i.style.scale = 1;
+            opened = false;
+        }
+    
+    });
 })
 
-btn2.addEventListener("click", ()=>{
 
-    if(!opened2){
-        let socmedIcon = document.querySelectorAll(".socmed-icon");
+function checkActive(){
+    sect.forEach((i, p) => {
+        const rect = i.getBoundingClientRect();
+        if(rect.top === 0){
+            link.forEach((e) => {
+                e.classList.remove("active");
+            });
+            link[p].classList.add("active");
+        }
+    });
+}
+window.onscroll = () => {
+    
+    sect.forEach((i, p) => {
+        const rect = i.getBoundingClientRect();
+        if(rect.top === 0){
+            link.forEach((e) => {
+                e.classList.remove("active");
+            });
+            link[p].classList.add("active");
+        }
+    });
+}
 
-        socmedIcon.forEach((i) => {
-            setTimeout(()=>{
-                i.style.display = "block";
-            }, 0)
-        });
-        btn2.style.scale = -1;
 
-        opened2 = true
-    }
-    else{
-        let socmedIcon = document.querySelectorAll(".socmed-icon");
+checkActive();
 
-        socmedIcon.forEach((i) => {
-            setTimeout(()=>{
-                i.style.display = "none";
-            }, 0)
-        });
-        btn2.style.scale = 1;
-        opened2 = false;
-    }
-
-})
-
-link.forEach(i => {
-    i.addEventListener('click', () => {
-        
-        link.forEach(e => {
-            e.classList.remove('active');
-        })
-        i.classList.add('active');
-        
-    })
-});
