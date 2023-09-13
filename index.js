@@ -28,7 +28,6 @@ btn.forEach((i) => {
             i.style.scale = 1;
             opened = false;
         }
-    
     });
 })
 
@@ -44,6 +43,7 @@ function checkActive(){
         }
     });
 }
+
 window.onscroll = () => {
     
     sect.forEach((i, p) => {
