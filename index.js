@@ -35,7 +35,7 @@ btn.forEach((i) => {
 function checkActive(){
     sect.forEach((i, p) => {
         const rect = i.getBoundingClientRect();
-        if(rect.top === 0){
+        if(rect.top <= 0){
             link.forEach((e) => {
                 e.classList.remove("active");
             });
@@ -48,7 +48,7 @@ window.onscroll = () => {
     
     sect.forEach((i, p) => {
         const rect = i.getBoundingClientRect();
-        if(rect.top === 0){
+        if(rect.top <= 0 ){
             link.forEach((e) => {
                 e.classList.remove("active");
             });
